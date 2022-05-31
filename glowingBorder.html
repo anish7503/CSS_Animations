@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Border</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="glass"></div>
+        <div class="box">
+            <h1>Glowing Border</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, doloremque! Odit, officiis sunt temporibus
+                voluptates ratione molestias. Vitae, obcaecati fugiat soluta eius eveniet aperiam similique ut magnam
+                reiciendis maiores doloremque quibusdam sed unde pariatur.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="glass"></div>
+        <div class="box">
+            <h1>Glowing Border</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, doloremque! Odit, officiis sunt temporibus
+                voluptates ratione molestias. Vitae, obcaecati fugiat soluta eius eveniet aperiam similique ut magnam
+                reiciendis maiores doloremque quibusdam sed unde pariatur.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="glass"></div>
+        <div class="box">
+            <h1>Glowing Border</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, doloremque! Odit, officiis sunt temporibus
+                voluptates ratione molestias. Vitae, obcaecati fugiat soluta eius eveniet aperiam similique ut magnam
+                reiciendis maiores doloremque quibusdam sed unde pariatur.</p>
+        </div>
+    </div>
+
+    <style>
+        /* Reseting Everything */
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* Setting Background */
+        body {
+            background: #010615;
+
+            /* setting flex type wrap */
+            display: flex;
+            flex-wrap: wrap;
+
+            /* Positioning all the containers at the centre of page */
+            justify-content: center;
+            align-items: center;
+
+            /* Doubt */
+            min-height: 100vh;
+        }
+
+        .container {
+            /* Setting up container */
+            background: #060c21;
+            width: 300px;
+            height: 400px;
+            margin: 40px;
+            color: #fff;
+            padding: 20px;
+
+            /* Positioning box content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: justify;
+
+            /* Doubt */
+            position: relative;
+        }
+
+        /* For lightening edge */
+        .container:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+        }
+
+        /* For blur shade */
+        .container:after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -2;
+
+            /* providing blur effect */
+            filter: blur(40px);
+        }
+
+        .container:nth-child(1):before,
+        .container:nth-child(1):after {
+            background: linear-gradient(235deg, #89ff00, #010615, #00bcd4);
+        }
+
+        .container:nth-child(2):before,
+        .container:nth-child(2):after {
+            background: linear-gradient(235deg, #ff005e, #010615, #fbff00);
+        }
+
+        .container:nth-child(3):before,
+        .container:nth-child(3):after {
+            background: linear-gradient(235deg, #772aff, #010615, #04ec3e);
+        }
+
+        .container .glass {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: rgba(255, 255, 255, .1);
+            pointer-events: none;
+        }
+    </style>
+</body>
+
+</html>
