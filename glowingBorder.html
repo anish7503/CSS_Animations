@@ -70,6 +70,7 @@
             margin: 40px;
             color: #fff;
             padding: 20px;
+            cursor: pointer;
 
             /* Positioning box content */
             display: flex;
@@ -81,8 +82,8 @@
             position: relative;
         }
 
-        /* For lightening edge */ 
-        .container:before {
+        /* For lightening edge */
+        .container::before {
             content: '';
             position: absolute;
             top: -2px;
@@ -90,6 +91,9 @@
             right: -2px;
             bottom: -2px;
             z-index: -1;
+
+            /* setting transition time */
+            transition: 0.5s;
         }
 
         /* For blur shade */
@@ -104,6 +108,9 @@
 
             /* providing blur effect */
             filter: blur(40px);
+
+            /* setting transition time */
+            transition: 0.5s;
         }
 
         .container:nth-child(1):before,
@@ -121,6 +128,15 @@
             background: linear-gradient(235deg, #772aff, #010615, #04ec3e);
         }
 
+        /* Scaling on hovering to make animation */
+        .container:hover:before{
+            transform: scale(1.05);
+        }
+        .container:hover:after{
+            transform: scale(1.1);
+        }
+
+        /* Changing color of half container */
         .container .glass {
             position: absolute;
             top: 0;
